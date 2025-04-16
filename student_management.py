@@ -118,15 +118,12 @@ def main():
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            try:
-                student_id = input("Enter student ID: ")
-                name = input("Enter name: ")
-                year = input("Enter year: ")
-                department = input("Enter department: ")
-                student = Student(student_id, name, year, department)
-                system.add_student(student)
-            except Exception as e:
-                print(f"Error: {e}")
+            student_id = input("Enter student ID: ")
+            name = input("Enter name: ")
+            year = input("Enter year: ")
+            department = input("Enter department: ")
+            student = Student(student_id, name, year, department)
+            system.add_student(student)
 
         elif choice == "2":
             student_id = input("Enter student ID to edit: ")
