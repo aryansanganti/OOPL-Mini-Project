@@ -4,14 +4,13 @@ class Student:
         self.name = name
         self.year = year
         self.department = department
-        self.courses = []  # list of courses assigned
-        self.marks = {}  # dictionary of subject: marks
-        self.attendance = {}  # dictionary of subject: attendance percentage
+        self.courses = []  
+        self.marks = {}  
+        self.attendance = {}  
 
     def assign_course(self, course):
         if course not in self.courses:
             self.courses.append(course)
-            # Initialize marks and attendance for the course
             self.marks[course] = None
             self.attendance[course] = 0
 
@@ -49,7 +48,7 @@ class Student:
 
 class StudentManagementSystem:
     def __init__(self):
-        # Using student_id as key
+
         self.students = {}
 
     def add_student(self, student):
@@ -96,7 +95,7 @@ class StudentManagementSystem:
         for student in self.students.values():
             match = True
             for key, value in criteria.items():
-                # Allow search by id, name, department
+
                 if key == "student_id" and student.student_id != value:
                     match = False
                 elif key == "name" and value.lower() not in student.name.lower():
@@ -224,7 +223,6 @@ def main():
         else:
             print("Invalid choice. Please try again.")
 
-    print("aryan")
-    print("Hello")
+
 if __name__ == '__main__':
     main()
