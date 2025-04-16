@@ -7,25 +7,11 @@ class Student:
         self.courses = []  
         self.marks = {}  
         self.attendance = {}  
-
     def assign_course(self, course):
         if course not in self.courses:
             self.courses.append(course)
             self.marks[course] = None
             self.attendance[course] = 0
-
-    def update_marks(self, course, mark):
-        if course in self.courses:
-            self.marks[course] = mark
-        else:
-            print(f"Course {course} not assigned to the student.")
-
-    def update_attendance(self, course, attendance_percentage):
-        if course in self.courses:
-            self.attendance[course] = attendance_percentage
-        else:
-            print(f"Course {course} not assigned to the student.")
-
     def update_details(self, name=None, year=None, department=None):
         if name:
             self.name = name
@@ -33,7 +19,6 @@ class Student:
             self.year = year
         if department:
             self.department = department
-
     def __str__(self):
         details = f"ID: {self.student_id}\nName: {self.name}\nYear: {self.year}\nDepartment: {self.department}\n"
         details += f"Courses: {', '.join(self.courses) if self.courses else 'None'}\n"
@@ -42,13 +27,11 @@ class Student:
             for course in self.courses:
                 mark = self.marks.get(course, 'N/A')
                 attendance = self.attendance.get(course, 'N/A')
-                details += f"  - {course}: Marks: {mark}, Attendance: {attendance}%\n"
         return details
 
 
 class StudentManagementSystem:
     def __init__(self):
-
         self.students = {}
 
     def add_student(self, student):
@@ -118,19 +101,6 @@ class StudentManagementSystem:
         else:
             print("Student not found.")
 
-    def update_student_marks(self, student_id, course, mark):
-        if student_id in self.students:
-            self.students[student_id].update_marks(course, mark)
-            print("Marks updated successfully.")
-        else:
-            print("Student not found.")
-
-    def update_student_attendance(self, student_id, course, attendance):
-        if student_id in self.students:
-            self.students[student_id].update_attendance(course, attendance)
-            print("Attendance updated successfully.")
-        else:
-            print("Student not found.")
 
 
 def main():
@@ -144,8 +114,6 @@ def main():
         print("5. Display All Students")
         print("6. Search Students")
         print("7. Assign Course to Student")
-        print("8. Update Student Marks")
-        print("9. Update Student Attendance")
         print("0. Exit")
         choice = input("Enter your choice: ")
 
