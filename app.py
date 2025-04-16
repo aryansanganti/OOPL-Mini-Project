@@ -20,8 +20,7 @@ def add_student():
         department = request.form.get('department')
         student = Student(student_id, name, year, department)
         system.add_student(student)
-        
-        # Append student details to CSV file
+
         file_exists = os.path.isfile(CSV_FILE)
         with open(CSV_FILE, 'a', newline='') as csvfile:
             writer = csv.writer(csvfile)

@@ -201,20 +201,15 @@ def main():
         elif choice == "8":
             student_id = input("Enter student ID: ")
             course = input("Enter course name: ")
-            try:
-                mark = float(input("Enter marks: "))
-                system.update_student_marks(student_id, course, mark)
-            except ValueError:
-                print("Invalid mark value.")
+            mark = float(input("Enter marks: "))
+            system.update_student_marks(student_id, course, mark)
+
 
         elif choice == "9":
             student_id = input("Enter student ID: ")
             course = input("Enter course name: ")
-            try:
-                attendance = float(input("Enter attendance percentage: "))
-                system.update_student_attendance(student_id, course, attendance)
-            except ValueError:
-                print("Invalid attendance value.")
+            attendance = float(input("Enter attendance percentage: "))
+            system.update_student_attendance(student_id, course, attendance)
 
         elif choice == "0":
             print("Exiting...")

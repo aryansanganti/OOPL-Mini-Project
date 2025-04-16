@@ -11,13 +11,9 @@
     <p>Year: {{ student.year }}</p>
     <p>Department: {{ student.department }}</p>
     <p>Courses: {{ student.courses }}</p>
-    <p>Marks: {{ student.marks }}</p>
-    <p>Attendance: {{ student.attendance }}</p>
     <div class="actions">
         <a href="{{ url_for('edit_student', student_id=student.student_id) }}">Edit Student</a>
         <a href="{{ url_for('assign_course', student_id=student.student_id) }}">Assign Course</a>
-        <a href="{{ url_for('update_marks', student_id=student.student_id) }}">Update Marks</a>
-        <a href="{{ url_for('update_attendance', student_id=student.student_id) }}">Update Attendance</a>
     </div>
     <a href="{{ url_for('index') }}">Go Back</a>
 </body>
